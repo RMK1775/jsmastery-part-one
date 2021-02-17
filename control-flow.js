@@ -43,3 +43,55 @@ statement(s)
 for (let i = 1; i <= 5; i++){
     console.log('Iteration: ' + i);
 }
+
+console.log('Counting down');
+for (let j = 5; j > 0; j--){
+    console.log(j);
+}
+console.log('Liftoff!');
+
+//While
+let k = 0;
+while(k < 5){
+    console.log('While Iteration:' + k);
+    k++;
+}
+
+//Do - While
+let l = 0;
+do{
+    if(l%2 !== 0){
+        console.log('Do-While odds: ' + l);
+    }
+    l++;
+}while(l <= 20)
+
+//For-In
+const person = {
+    firstName: 'That',
+    lastName: 'Guy'
+}
+
+for (let key in person){
+    console.log(key, person[key]);
+}
+
+//For-Of
+const colors = ['red', 'green', 'blue'];
+for(let color of colors){
+    console.log(color);
+}
+
+//Break and Continue
+let m = 0;
+while(m <= 10){
+    if(m == 9) break;
+    if(m == 5) {
+        m++;
+        continue;
+    }
+    console.log(m);
+    m++;
+}
+
+//Exercises
