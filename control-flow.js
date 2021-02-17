@@ -95,3 +95,63 @@ while(m <= 10){
 }
 
 //Exercises
+function maxNum(a, b){
+    let max = (a > b) ? a : b;
+    return 'Max # is: ' + max;
+}
+maxNum(4,6);
+
+function imageOrientation(height, width){
+    let orientation = (height > width) ? 'portrait':'landscape';
+    return 'Pic is set to: ' + orientation;
+}
+imageOrientation(30, 15);
+
+// Divisible by 3 = Fizz
+// Divisible by 5 = Buzz
+// Divisible by 3 and 5 = FizzBuzz
+// Not divisible by 3 or 5 = input
+// Not a number = 'Not a number'
+
+function fizzBuzz(input){
+    if(typeof input !== 'number'){
+        return 'Not a number';
+    }else if(input % 15 == 0){
+        return 'FizzBuzz';
+    }else if(input % 5 == 0){
+        return 'Buzz';
+    }else if(input % 3 == 0){
+        return 'Fizz';
+    }
+return input;
+}
+fizzBuzz(7);
+
+// Speed limit = 70
+// Every 5 over limit = 1 point
+// Math.floor(#) may help
+// 12 points or more = suspended
+
+function checkSpeed(speed){
+    const limit = 70;
+    let points = Math.floor((speed - limit)/5);
+
+    if(limit > speed || points == 0)
+        return 'ok';
+
+    if (points >= 12)
+        return 'suspended';
+
+    return 'Points: ' + points;
+}
+checkSpeed(74);
+
+function showNumbers(input){
+    if(typeof input !== 'number')
+        return NaN;
+     for(let i = 0; i <= input; i++) {
+         let output = (i % 2 == 0) ? 'Even' : 'Odd';
+         console.log(i, output);
+     }
+}
+showNumbers(10);
