@@ -51,5 +51,63 @@ console.log((true || false)); //true
 //NOT: use of ! reverses the evaluated value
 console.log(!(true || false)); //false; !(true) = not(true) = false
 
+//Falsy: the following return false in JS
+/*
+undefined
+null
+0
+false
+''
+NaN
+*/
+//Anything else is returned as 'truthy'; true
+
+let userColor = 'red';
+let defaultColor = 'blue';
+let currentColor = userColor || defaultColor;
+
+console.log(currentColor); //red; if userColor were undefined, it would display blue
 
 // Bitwise
+//Bitwise OR
+//In bits 1 = 00000001
+// 2 = 00000010
+// 3 = 00000011
+// Note the use of a single pipe for the OR
+console.log(1 | 2); //3; in evaluating each of the 8 positions between the numbers if a 1 is present is in 1 OR 2 it is retained and the binary result is displayed as its corresponding number.
+console.log( 1 & 2); //0; same evaluative process as above except both positions must contain a 1 for it to be retained; 1 AND 2.
+
+//Read, Write, Execute example
+//Permissions
+// Read = 00000100
+// Write = 00000010
+// Execute = 00000001
+
+const readPermission = 4;
+const writePermission = 2;
+const executePermission = 1;
+
+let myPermission = 0;
+myPermission = myPermission | writePermission;
+console.log(myPermission); //6
+
+let message = (myPermission & readPermission) ? 'yes' : 'no';
+
+console.log(message); //no
+
+//Order of Precedence
+//PEMDAS
+/*
+Parentheses
+Exponents
+Multiplication/Division
+Addition/Subtraction
+ */
+
+//Swapping variables
+let d = 'red';
+let e = 'blue';
+let c = d;
+d = e;
+e = c;
+console.log("d: " + d + " e: " + e);
