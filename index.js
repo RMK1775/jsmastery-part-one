@@ -6,7 +6,15 @@ console.log(name);
 const interestRate = 2.499;
 console.log(interestRate);
 
-//Primitive-Value types
+//Primitive aka Value types
+/*
+    Number
+    String
+    Boolean
+    Symbol
+    undefined
+    null
+ */
 let firstName = 'Some'; //String literal
 let age = 30; //Number literal
 let isApproved = false; //Boolean literal
@@ -18,7 +26,12 @@ console.log(typeof name); //"number"
 console.log(typeof lastName); //"undefined"
 console.log(typeof selectedColor); //"object"
 
-//Reference types (Object, Array, Function)
+//Reference types
+/*
+    Object
+    Array
+    Function
+ */
 let person = {
     name: 'Kimbo',
     age: 45
