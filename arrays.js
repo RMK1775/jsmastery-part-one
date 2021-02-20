@@ -164,4 +164,66 @@ const aSum = randomNums.reduce(
     return accumulator + currentValue;
     }, 0);
 
+//Exercises
+//1
+console.log('\nExercise 1');
+
+const minMax = arrayFromRange(-10, 4);
+console.log(minMax);
+
+function arrayFromRange(min, max){
+    const result = [];
+    for(let i = min; i <= max; i++){
+        result.push(i);
+    }
+    return result;
+}
+
+//2
+console.log('\nExercise 2');
+
+function itIncludes(array, searchElement){
+    if((array.indexOf(searchElement)) !== -1)
+        return true;
+
+    return false;
+}
+console.log(itIncludes(randomNums, 12));
+
+//3
+console.log('\nExercise 3');
+
+const output = except(randomNums, [12]);
+console.log(output);
+
+function except(array, exclusionArray){
+    const result = [];
+    for(let element of array)
+        if (!exclusionArray.includes(element))
+            result.push(element);
+    return result;
+}
+
+//4
+console.log('\nExercise 4');
+
+const result4 = move(randomNums, 0, 3);
+console.log(result4);
+
+function move(array, index, offset){
+    const position = index + offset;
+    if(position >= array.length || position < 0){
+        console.error('Invalid offset!');
+        return;
+    }
+    const output =[...randomNums];
+    const element = output.splice(index, 1)[0];
+    output.splice(position, 0, element);
+    return output;
+}
+
+//5
+console.log('\nExercise 5');
+
+
 
