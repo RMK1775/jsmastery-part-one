@@ -81,7 +81,7 @@ const second = [4, 5, 6];
 
 const combined = first.concat(second); // [1, 2, 3, 4, 5, 6]
 //.slice(start position, end position)
-//Note: the slice starts immediately after the start position up to nd including the end position
+//Note: the slice starts immediately after the start position up to and including the end position
 const sliced = combined.slice(2, 4); //[3, 4]
 console.log(sliced);
 
@@ -92,3 +92,76 @@ console.log(sliced);
 // changing it for everything that points to it!
 
 //Spread
+const spred = [...first, ...second]; // [1, 2, 3, 4, 5, 6]
+const spredPlus = [...first, 'a', ...second]; //[1, 2, 3, 'a', 4, 5, 6]
+const copySpred = [...spred]; //[1, 2, 3, 4, 5, 6]
+
+//Iterating
+spred.forEach(element => console.table(element));
+spredPlus.forEach((element, index) => console.log(index, element));
+
+//Joining
+//String created with the elements in the array separated by designated format in parentheses
+const joined = spred.join(',');
+console.log(joined);
+
+//Sidebar: Split
+// Array created by splitting the string using the designated separator in parentheses
+const example = 'this is an example';
+const parts = example.split(' ');
+
+//Sorting
+//Primitive
+const randomNums = [36, 56, 89, 12, -4];
+randomNums.sort();
+randomNums.reverse();
+
+//Objects
+const coarses = [
+    { grade: 'coarse', grit:40 },
+    {grade: 'medium', grit: 80 },
+    {grade: 'fine', grit: 150}
+];
+coarses.sort(function(a,b){
+    const nameA = a.grade.toUpperCase();
+    const nameB = b.grade.toUpperCase();
+    if(nameA < nameB) return -1;
+    if(nameA > nameB) return 1;
+    return 0;
+})
+
+//Testing
+const allPositive = spred.every(function(value){
+    return value >= 0;
+});
+console.log(allPositive); //true
+const atLeastOneNegative = randomNums.some(function(value){
+    return value < 0;
+})
+console.log(atLeastOneNegative); //true
+
+//Filtering
+//Values
+const filtered = randomNums.filter(value => value >= 0);
+
+//Mapping
+const items = filtered.map(value => '<li>' + value + '</li>');
+const html = '<ul>' + items.join('') + '</ul>';
+
+//Notice the added parentheses around the object(s) being created
+//Without them the square brackets would be treated as a block of code!
+const moreItems = randomNums.map(input => ({value: input }));
+
+//Chaining
+const refiltered = randomNums
+    .filter(value => value >= 0)
+    .map(input => ({value: input }));
+
+//Reducing
+//.reduce(callback function, initial value)
+const aSum = randomNums.reduce(
+    (accumulator, currentValue) => {
+    return accumulator + currentValue;
+    }, 0);
+
+
