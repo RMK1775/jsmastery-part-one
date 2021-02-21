@@ -224,6 +224,52 @@ function move(array, index, offset){
 
 //5
 console.log('\nExercise 5');
+const someNums = [1, 2, 3, 4, 1];
+const count = countOccurrences(someNums, 1);
+console.log(count);
 
+function countOccurrences(array, searchElement){
+    const result = array.filter(value => value === 1);
+    return result.length;
+}
 
+//6
+console.log('\nExercise 6');
 
+const max = getMax(someNums);
+console.log(max);
+
+function getMax(array){
+    // let result = 0;
+    // for(let element of array){
+    //     if(element > result){
+    //         result = element;
+    //     }
+    // }
+    // return result;
+
+    //Alternate method using reduce
+    return array.reduce((accumulator, current) => (current > accumulator) ? current : accumulator);
+}
+
+//7
+console.log('\nExercise 7');
+const movies = [
+    {title: 'a', year: 2018, rating: 4.5},
+    {title: 'b', year: 2019, rating: 3.5},
+    {title: 'c', year: 2020, rating: 4.0},
+    {title: 'd', year: 2018, rating: 5.0}
+];
+const chosenPics = pickFlicks(movies, 2018, 4);
+console.log(chosenPics);
+// All movies from 2018 with rating >= 4
+// Sorted by rating in descending order
+// Display title only
+function pickFlicks(array, year, rating){
+    let list = movies
+        .filter(movie => movie.year === year && movie.rating >= rating)
+        .sort((a, b) => a.rating - b.rating)
+        .reverse()
+        .map(movie => movie.title)
+    return list;
+}
