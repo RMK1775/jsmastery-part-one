@@ -104,4 +104,42 @@ var color = 'red';
 // Whereas this let is only accessible within the containing file (functions.js)
 let age = 30;
 
-//'this' keyword
+//Exercises
+//1
+console.log('\nExercise 1');
+console.log(sum([1, 2, 3, 4]));
+function sum(...items){
+    if(items.length === 1 && Array.isArray(items[0]))
+        items = [...items[0]];
+    return items.reduce((a, b) => a + b);
+}
+
+//2
+console.log('\nExercise 2');
+const circle = {
+    radius: 1,
+    get area() {
+    return Math.PI * this.radius * this.radius;
+    }
+};
+console.log(circle.area);
+
+//3
+console.log('\nExercise 3');
+
+const someNums = [1, 2, 3, 4, 1];
+const notNums = 'Test string';
+try{
+    const count = countOccurrences(notNums, 1);
+    console.log(count);
+    }
+    catch(e){
+        console.log(e);
+    }
+
+function countOccurrences(array, searchElement){
+    if(!(Array.isArray(array)))
+        throw new Error('Failed to pass an array.');
+    const result = array.filter(value => value === 1);
+    return result.length;
+}
