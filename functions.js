@@ -134,11 +134,11 @@ try{
     console.log(count);
     }
     catch(e){
-        console.log(e);
+        console.log(e.message);
     }
 
 function countOccurrences(array, searchElement){
-    if(!(Array.isArray(array)))
+    if(!Array.isArray(array))
         throw new Error('Failed to pass an array.');
     const result = array.filter(value => value === 1);
     return result.length;
